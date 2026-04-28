@@ -105,13 +105,13 @@ src/
 
 ## 🚀 Live Demo
 
-👉 https://your-vercel-link.vercel.app
+👉https://health-saa-s-raga-ai.vercel.app/
 
 ---
 
 ## 💻 GitHub Repository
 
-👉 https://github.com/your-username/healthcare-saas
+👉 https://github.com/Kartikmanth19/-Health-SaaS-Raga.AI.git
 
 ---
 
