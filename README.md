@@ -1,73 +1,137 @@
-# React + TypeScript + Vite
+# 🏥 Healthcare SaaS Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Overview
 
-Currently, two official plugins are available:
+This project is a B2B Healthcare SaaS frontend application built to simulate real-world healthcare platform functionalities including authentication, analytics, and patient management.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🎯 Evaluation Criteria Mapping
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ✅ Code Quality & Structure
 
-## Expanding the ESLint configuration
+* Modular folder structure (features-based architecture)
+* Separation of concerns (components, services, store)
+* Clean and readable TypeScript code
+* Reusable components implemented
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🎨 UI/UX & Responsiveness
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* Modern SaaS-style UI with gradients and cards
+* Responsive layout (Sidebar + Navbar + Content)
+* Grid and List view toggle for patients
+* Smooth user interactions and hover states
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🧠 State Management
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* Zustand used for global state
+* Centralized patient data management
+* Efficient data flow across components
+* Derived state (filtered patients)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+### ⚙️ Feature Completeness
+
+#### 🔐 Authentication
+
+* Firebase Email/Password login
+* Session persistence
+* Error handling & validation
+
+#### 📊 Dashboard / Analytics
+
+* KPI cards (Patients, Revenue, Appointments)
+* Chart visualization using Recharts
+
+#### 🧑‍⚕️ Patient Management
+
+* Grid View & List View
+* Toggle functionality
+* Search filtering
+* Add & Delete patient
+
+#### 🔔 Notifications
+
+* Service Worker implemented
+* Notification triggered on patient addition
+* Notification click navigation
+
+---
+
+### 🚀 Performance & Best Practices
+
+* Lazy loading friendly structure
+* Minimal re-renders using Zustand
+* Optimized component design
+* Clean inline styling (no unnecessary CSS bloat)
+
+---
+
+### 🧱 Scalability & Architecture Thinking
+
+* Feature-based folder structure
+* Easily extendable modules
+* Clear separation of UI and logic
+* Ready for backend/API integration
+
+---
+
+## 🛠 Tech Stack
+
+* React (Vite)
+* TypeScript
+* Zustand (State Management)
+* Firebase Authentication
+* Service Worker API
+* Recharts (Analytics)
+
+---
+
+## 📂 Folder Structure
+
+src/
+├── features/
+├── components/
+├── services/
+├── routes/
+├── store/
+
+---
+
+## 🚀 Live Demo
+
+👉 https://your-vercel-link.vercel.app
+
+---
+
+## 💻 GitHub Repository
+
+👉 https://github.com/your-username/healthcare-saas
+
+---
+
+## ⚙️ Setup Instructions
+
+npm install
+npm run dev
+
+---
+
+## 🔑 Demo Credentials
+
+Email: [test@gmail.com](mailto:test@gmail.com)
+Password: 123456
+
+---
+
+## 🌟 Future Improvements
+
+* Edit patient functionality
+* Role-based authentication
+* Backend integration
+* Dark mode support
