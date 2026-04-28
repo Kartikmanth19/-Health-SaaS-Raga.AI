@@ -4,7 +4,7 @@ import AnalyticsPage from "../features/analytics/AnalyticsPage";
 import PatientPage from "../features/patients/PatientPage";
 import Layout from "../components/layout/Layout";
 import { useAuthStore } from "../features/auth/authStore";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 function Protected({ children }: { children: ReactNode }) {
   const { user, loading } = useAuthStore();

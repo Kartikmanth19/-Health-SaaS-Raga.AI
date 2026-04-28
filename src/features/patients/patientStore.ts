@@ -1,5 +1,6 @@
 import { create } from "zustand";
 
+/* ✅ TYPES */
 interface Patient {
   id: number;
   name: string;
@@ -23,6 +24,7 @@ interface PatientState {
   filteredPatients: () => Patient[];
 }
 
+/* ✅ STORE */
 export const usePatientStore = create<PatientState>((set, get) => ({
   view: "grid",
   search: "",
@@ -35,18 +37,21 @@ export const usePatientStore = create<PatientState>((set, get) => ({
     { id: 5, name: "Modi", age: 24 },
   ],
 
+  /* 🔄 TOGGLE VIEW */
   toggleView: () =>
     set((state) => ({
       view: state.view === "grid" ? "list" : "grid",
     })),
 
-  setSearch: (value) => set({ search: value }),
+  /* 🔍 SEARCH */
+  setSearch: (value: string) => set({ search: value }),
 
+  /* ➕ ADD PATIENT */
   addPatient: (patient) =>
     set((state) => {
       if (!patient.name || patient.age <= 0) {
         console.error("Invalid patient data");
-        return state;
+        return state; // ✅ keep state unchanged
       }
 
       return {
@@ -57,11 +62,13 @@ export const usePatientStore = create<PatientState>((set, get) => ({
       };
     }),
 
+  /* ❌ DELETE */
   deletePatient: (id) =>
     set((state) => ({
       patients: state.patients.filter((p) => p.id !== id),
     })),
 
+  /* ✏️ UPDATE */
   updatePatient: (id, updated) =>
     set((state) => ({
       patients: state.patients.map((p) =>
@@ -69,6 +76,7 @@ export const usePatientStore = create<PatientState>((set, get) => ({
       ),
     })),
 
+  /* 🔎 FILTER */
   filteredPatients: () => {
     const { patients, search } = get();
 

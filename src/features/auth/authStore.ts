@@ -5,8 +5,17 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
+import type { User } from "firebase/auth";
 
-export const useAuthStore = create((set) => ({
+interface AuthState {
+  user: User | null;
+  loading: boolean;
+  login: (email: string, password: string) => Promise<void>;
+  logout: () => Promise<void>;
+  initAuth: () => void;
+}
+
+export const useAuthStore = create<AuthState>((set) => ({
   user: null,
   loading: true,
 
@@ -22,7 +31,7 @@ export const useAuthStore = create((set) => ({
 
   initAuth: () => {
     onAuthStateChanged(auth, (user) => {
-      set({ user, loading: false });
+      set({ user: user ?? null, loading: false });
     });
   },
 }));

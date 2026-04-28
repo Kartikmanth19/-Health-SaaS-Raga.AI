@@ -14,7 +14,7 @@ export default function Login() {
   const isValid = email.includes("@") && password.length >= 6;
 
   const handleLogin = async () => {
-  console.log("Login clicked"); // 👈 check this
+  console.log("Login clicked"); 
 
   try {
     setLoading(true);
